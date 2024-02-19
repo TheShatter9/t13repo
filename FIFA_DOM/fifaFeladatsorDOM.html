@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifa feladatsor - DOM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">FIFA feladatsor</h1>
+        <!--1. feladat-->
+        <h2>Adja meg aktuálisan hány csapat szerepel a ranglistán.</h2>
+        <p id="f1"></p>
+
+        <!--2. feladat-->
+        <h2>Írja ki mennyi a résztvevő csapatok átlagpontszáma.</h2>
+        <button type="button" class="btn btn-success w-100 my-3" id="f2feladat">Átlagpontszám</button>
+        <p id="f2"></p>
+
+        <!--3. feladat-->
+        <h2>Listázza ki azokat a csapatokat, akik az átlagnál több pontot értek el!</h2>
+        <button type="button" class="btn btn-success w-100 my-3" id="f3feladat">Átlagnál több pontot elértek
+            táblája</button>
+        <table id="f3" class="table table-dark table-striped table-hover table-sm table-bordered">
+            <tr>
+                <th>Csapat neve</th>
+                <th>Csapat pontja</th>
+            </tr>
+        </table>
+
+        <!--4. feladat-->
+        <h2>Írja ki a legtöbbet javító csapat adatait: Helyezés, CsapatNeve, Pontszáma.</h2>
+        <button type="button" class="btn btn-success w-100 my-3" id="f4feladat">Legtöbbet javító csapat</button>
+        <p id="f4"></p>
+
+        <!--5. feladat-->
+        <h2>Határozza meg a adatok között megtalálható-e Magyarország csapata.</h2>
+        <button type="button" class="btn btn-success w-100 my-3" id="f5feladat">Szerepel?</button>
+        <p id="f5"></p>
+        <h3>Határozza meg a adatok közöt megtalálható-e bármelyik csapat!</h3>
+        <input type="text" class="form-control" id="szerepelE">
+        <button type="button" class="btn btn-success w-100 my-3" id="f5flfeladat">Szerepel?</button>
+        <p id="f5fl"></p>
+
+
+
+        <script src="fifaFeladatsorDOM.js"></script>
+    </div>
+</body>
+
+</html>
