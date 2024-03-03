@@ -1,0 +1,47 @@
+body {
+    background: #1D4350;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #A43931, #1D4350);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #A43931, #1D4350);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100wh;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 600px;
+    border-radius: 10px;
+
+}
+
+label,
+h1 {
+    color: white;
+
+}
+
+h1 {
+    padding: 20px 0px 0px 10px;
+}
+
+form {
+    padding: 10px;
+}
+
+.zoldPiros {
+    background-image: linear-gradient(to right, #198754, #dc3545);
+    color: white;
+    margin: 5px 50px 5px 50px;
+}
+
+.kekCian {
+    background-image: linear-gradient(to right, #0d6efd, #0dcaf0);
+    color: white;
+    margin-left: 170px;
+}
+
+.feketeFeher {
+    background-image: linear-gradient(to right, #000000, #ffffff);
+    margin-left: 155px;
+}
