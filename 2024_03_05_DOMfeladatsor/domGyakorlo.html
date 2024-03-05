@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM gyakorló feladatsor</title>
+    <style>
+        #kirajzolandoElem {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #FF0000;
+        }
+
+        #bujocska {
+            transition: opacity 5s ease;
+        }
+
+        .szisza {
+            width: 100px;
+        }
+
+        #hibaDoboz {
+            display: none;
+            padding: 10px;
+            margin-top: 20px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .hiba {
+            background-color: #ff5252;
+            width: 300px;
+        }
+
+        .sikeres {
+            background-color: #4caf50;
+            width: 300px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--1. feladat-->
+    <input type="text" oninput="betuMegszamlalo(this, document.getElementById('karakterszam'))">
+    <p id="karakterszam">0</p>
+    <hr>
+
+    <!--2. feladat-->
+
+    <label for="xHossz">Elem szélessége:</label>
+    <input type="number" id="xHossz" value="100"><br>
+    <label for="yHossz">Elem magassága:</label>
+    <input type="number" id="yHossz" value="100"><br>
+    <button type="button" id="kirajzoloGomb">Kirajzol</button><br>
+
+    <div id="kirajzolandoElem"></div><br><br><br>
+
+    <hr>
+    <!--3. feladat-->
+    <div><img src="hidingCat.jpg" id="elbujoMacska" onclick="toggleAnimacio()" class="szisza"></div>
+    <hr>
+    <!--4. feladat-->
+    <form onsubmit="return ellenorzes()">
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="emailMegerosites">E-mail megerősítése:</label><br>
+        <input type="email" id="emailMegerosites" name="emailMegerosites" required><br>
+
+        <input type="submit" value="Ellenőrzés">
+    </form>
+
+    <div id="hibaDoboz" class="hiba"></div>
+</body>
+
+<script>
+    //1. feladat
+    function betuMegszamlalo(inputElem, karakterSzamElem) {
+        let betukSzama = inputElem.value.length;
+        karakterSzamElem.innerHTML = betukSzama;
+    }
+
+
+    //2. feladat
+
+    kirajzoloGomb.addEventListener("click", Kirajzol);
+    function Kirajzol() {
+        let szelesseg = document.querySelector("#xHossz").value;
+        let magassag = document.querySelector("#yHossz").value;
+        let modositandoObjektum = document.querySelector("#kirajzolandoElem");
+        modositandoObjektum.style.width = szelesseg + "px";
+        modositandoObjektum.style.height = magassag + "px";
+    }
+
+
+
+    //3. feladat
+    let animacioFut = false;
+    function toggleAnimacio() {
+        let elbujoMacska = document.getElementById("elbujoMacska");
+
+        if (animacioFut) {
+            elbujoMacska.style.transition = "opacity 5s ease";
+            elbujoMacska.style.opacity = 1;
+        }
+        else {
+            elbujoMacska.style.transition = "opacity 5s ease";
+            elbujoMacska.style.opacity = 0;
+        }
+        animacioFut = !animacioFut;
+    }
+
+    //4.feladat
+    function ellenorzes() {
+        let emailInput = document.getElementById("email");
+        let megerositesInput = document.getElementById("emailMegerosites");
+        let hibaDoboz = document.getElementById("hibaDoboz");
+
+        // Alaphelyzetbe állítás
+        hibaDoboz.style.display = "none";
+        hibaDoboz.textContent = "";
+
+        // Email validáció regex
+        let emailRegex = /^[0-9a-z\.-]+@([0-9a-z-]+\.)+[a-z]{2,4}$/i;
+
+        if (emailInput.value === "" && megerositesInput.value === "") {
+            hibaDoboz.style.display = "block";
+            hibaDoboz.textContent = "Nincs kitöltve egyik mező sem!";
+            hibaDoboz.className = "hiba";
+            return false;
+        }
+
+        if (emailInput.value === "") {
+            hibaDoboz.style.display = "block";
+            hibaDoboz.textContent = "Nincs kitöltve az e-mail mező!";
+            hibaDoboz.className = "hiba";
+            return false;
+        }
+
+        if (megerositesInput.value === "") {
+            hibaDoboz.style.display = "block";
+            hibaDoboz.textContent = "Nincs kitöltve az e-mail megerősítése mező!";
+            hibaDoboz.className = "hiba";
+            return false;
+        }
+
+        if (!emailRegex.test(emailInput.value)) {
+            hibaDoboz.style.display = "block";
+            hibaDoboz.textContent = "Nem megfelelő az e-mail cím formátuma!";
+            hibaDoboz.className = "hiba";
+            return false;
+        }
+
+        if (emailInput.value !== megerositesInput.value) {
+            hibaDoboz.style.display = "block";
+            hibaDoboz.textContent = "A két mező tartalma nem egyezik!";
+            hibaDoboz.className = "hiba";
+            return false;
+        }
+
+        // Ha minden valid, akkor sikeres üzenet
+        hibaDoboz.style.display = "block";
+        hibaDoboz.textContent = "Adatok rögzítése sikeres!";
+        hibaDoboz.className = "sikeres";
+
+        // Űrlap elküldésének megakadályozása (ez csak demonstráció, valóságban szerveroldali ellenőrzéssel kell kiegészíteni)
+        return false;
+    }
+</script>
+
+</html>
