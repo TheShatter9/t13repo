@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery feladatsor</title>
+    <style>
+        #kocka {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            left: 0px;
+            color: white;
+        }
+
+        #macska {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="bevitel">
+    <p id="karakterszam">0</p>
+    <hr>
+    <label for="xHossz">Elem szélessége:</label>
+    <input type="number" value="100" id="xHossz"><br>
+    <label for="yHossz">Elem magassága:</label>
+    <input type="number" value="100" id="yHossz"><br>
+    <button type="button" id="kirajzol">Kirajzol</button>
+    <button type="button" id="nullaz">Töröl</button>
+    <div id="kocka"></div>
+    <hr>
+    <button type="button" id="macskaEl">Macska elrejtése</button><br>
+    <img src="hidingCat.jpg" alt="bujocska" title="bujocska" id="macska">
+    <hr>
+    <div id="uzenet"></div>
+    <label for="email">E-mail cím:</label><br>
+    <input type="email" id="email"><br>
+    <label for="emailUj">E-mail cím megerősítése:</label><br>
+    <input type="email" id="emailUj"><br>
+    <button id="ellenoriz">E-mail címek ellenőrzése</button>
+
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#bevitel").on("input", function () {
+                var inputText = $(this).val();
+                var charCount = inputText.length;
+                $("#karakterszam").text(charCount);
+            });
+
+            $("#kirajzol").click(function () {
+                var xHossz = $("#xHossz").val();
+                var yHossz = $("#yHossz").val();
+
+                $("#kocka").css({
+                    width: xHossz,
+                    height: yHossz
+                });
+            });
+
+            $("#nullaz").click(function () {
+                $("#xHossz").val(100);
+                $("#yHossz").val(100);
+
+                $("#kocka").css({
+                    width: 100,
+                    height: 100
+                })
+            });
+
+            $("#macskaEl").click(function () {
+                $("#macska").fadeToggle(5000);
+            });
+
+            $("#ellenoriz").click(function () {
+                $("#uzenet").text("Nincs kitöltve egyik mező sem!")
+            })
+        });
+    </script>
+</body>
+
+</html>
