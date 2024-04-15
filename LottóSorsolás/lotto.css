@@ -1,0 +1,103 @@
+.golyokOtos {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    /* Középre igazítás */
+    color: white;
+    background-color: green;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    /* Számok középre igazítása */
+    font-size: 20px;
+    /* Szövegméret */
+    margin: 5px;
+    /* Margó a gömbök között */
+}
+
+.golyokHatos {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    /* Középre igazítás */
+    color: white;
+    background-color: rgb(235, 15, 66);
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    /* Számok középre igazítása */
+    font-size: 20px;
+    /* Szövegméret */
+    margin: 5px;
+    /* Margó a gömbök között */
+}
+
+.golyokKeno {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    /* Középre igazítás */
+    color: white;
+    background-color: rgb(226, 6, 111);
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    /* Számok középre igazítása */
+    font-size: 20px;
+    /* Szövegméret */
+    margin: 5px;
+    /* Margó a gömbök között */
+}
+
+.golyokSkandinavKezi {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    /* Középre igazítás */
+    color: white;
+    background-color: rgb(25, 64, 124);
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    /* Számok középre igazítása */
+    font-size: 20px;
+    /* Szövegméret */
+    margin: 5px;
+    /* Margó a gömbök között */
+}
+
+
+
+.golyokEuroJackpotA {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    /* Középre igazítás */
+    color: black;
+    background-color: rgb(254, 217, 1);
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    /* Számok középre igazítása */
+    font-size: 20px;
+    /* Szövegméret */
+    margin: 5px;
+    /* Margó a gömbök között */
+}
+
+.golyokEuroJackpotB {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    /* Középre igazítás */
+    color: black;
+    background-color: rgb(254, 217, 1);
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    /* Számok középre igazítása */
+    font-size: 20px;
+    /* Szövegméret */
+    margin: 5px;
+    /* Margó a gömbök között */
+}
