@@ -1,0 +1,18 @@
+1) Hozzon létre egy kollekciót "Helsinki" néven. MongoDB segítségével, Atlas felhőszolgáltatásba!
+
+2) Az előbb létrehozzott kollekciójába helyezze el a txt államányban található adatokat, dokumentumokban rendezve, az állományban az összetartozó adatok soronként vannak elhelyezve, elválasztó karakterük pedig ";"!
+Az adattípusok a következők:
+//Helyezés
+//CsapatMeret
+//SportAg
+//VersenySzam
+
+3) Listázza ki az azokat a sportágakat, amik torna vagy úszás sportágból vannak. A megjelenített adatokból, csak a sportág neve és a versenyszám neve látszódjon.
+
+4) Listázd ki azokat a versenyszámokat, ahol dobogós helyezést ért el a magyar csapat.
+
+5) Jelenítsd meg a legnagyobb csapatmérettel rendelkező versenyszám csapatának minden adatát.
+
+6) Listázd ki azokat a sportágakat, amikben egyéniben szereztek a magyarok aranyérmet.
+
+Megjegyzés: A feltöltéshez csatold a parancsokat tartalmazó fájlokat.
