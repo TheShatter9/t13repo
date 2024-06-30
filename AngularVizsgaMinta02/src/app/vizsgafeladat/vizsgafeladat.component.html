@@ -1,0 +1,33 @@
+<h1>Angular modul megoldása</h1>
+<div class="form-group">
+    <label for="htmlInput">HTML modul pontszáma:</label>
+    <input type="number" id="htmlModul" [(ngModel)]="html" class="form-control w-100">
+</div>
+
+<div class="form-group">
+    <label for="bootstrapInput">Bootstrap modul pontszáma:</label>
+    <input type="number" id="bootstrapModul" [(ngModel)]="bootstrap" class="form-control w-100">
+</div>
+<div class="form-group">
+    <label for="javaScriptInput">JavaScript modul pontszáma:</label>
+    <input type="number" id="javaScriptModul" [(ngModel)]="javaScript" class="form-control w-100">
+</div>
+<div class="form-group">
+    <label for="typeScriptInput">TypeScript modul pontszáma:</label>
+    <input type="number" id="typeScriptModul" [(ngModel)]="typeScript" class="form-control w-100">
+</div>
+<div class="form-group">
+    <label for="angularInput">Angular modul pontszáma:</label>
+    <input type="number" id="angularModul" [(ngModel)]="angular" class="form-control w-100">
+</div>
+<div class="form-group">
+    <label for="serverInput">Szerver modul pontszáma:</label>
+    <input type="number" id="serverModul" [(ngModel)]="server" class="form-control w-100">
+</div>
+<button type="button" class="btn btn-success w-100" (click)="EredmenyMentes()">Eredmény mentése</button>
+<p>A vizsgán szerzett feladatok összpontszáma:
+    {{html+bootstrap+javaScript+typeScript+angular+server}}</p>
+
+<ul>
+    <li *ngFor="let uzenet of eredmenyek">{{uzenet}}</li>
+</ul>
